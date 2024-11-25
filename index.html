@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical SaaS Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Medical Image SaaS Tool</h1>
+    </header>
+    <main>
+        <section id="upload">
+            <h2>Upload Medical Image (DICOM or PNG)</h2>
+            <input type="file" id="imageUpload" accept=".dcm, image/*" />
+            <p id="dicomMetadata"></p>
+        </section>
+        <section id="imageDisplay">
+            <h2>Image Display & Tools</h2>
+            <canvas id="imageCanvas"></canvas>
+            <div id="controls">
+                <button onclick="zoomIn()">Zoom In</button>
+                <button onclick="zoomOut()">Zoom Out</button>
+                <button onclick="reset()">Reset</button>
+                <button onclick="enableCrop()">Enable Crop</button>
+                <button onclick="applyCrop()">Apply Crop</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Medical SaaS Tool</p>
+    </footer>
+    <script src="dicom-parser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
