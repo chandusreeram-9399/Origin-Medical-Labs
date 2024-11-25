@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# Medical Image Manipulation SaaS Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
+This project implements a SaaS application designed to manipulate medical images. It includes features like image upload, zoom, cropping, and metadata extraction for DICOM files. The application is built using HTML, CSS, JavaScript, and libraries such as `dicom-parser` for DICOM file parsing.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Tech Stack
+- **Frontend**: HTML, CSS, JavaScript
+- **Libraries**:
+  - [dicom-parser](https://github.com/dicom-parser): For parsing DICOM files and extracting metadata.
+  - [KonvaJS](https://konvajs.org/): For interactive 2D canvas-based image manipulation.
+- **Tools**: Visual Studio Code for development and testing.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Thought Process and Implementation Approach
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1. Understanding the Requirements
+- **Key Functionalities**:
+  - Upload and display medical images (PNG and DICOM formats).
+  - Manipulate images with zoom and cropping functionalities.
+  - Extract and display metadata from DICOM files.
 
-### `npm test`
+- **Goals**:
+  - Provide an intuitive and responsive user interface.
+  - Ensure efficient image rendering and metadata parsing.
+  - Maintain modular and reusable code.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. Designing the Application
+- **Frontend Design**:
+  - Used HTML and CSS to structure and style the application.
+  - Designed a responsive layout for a seamless user experience on all devices.
 
-### `npm run build`
+- **Image Manipulation Logic**:
+  - Implemented zoom and crop using JavaScript, leveraging KonvaJS for smooth and interactive image editing.
+  - Added reset functionality to allow users to undo changes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Metadata Extraction**:
+  - Integrated `dicom-parser` to parse DICOM files and extract relevant metadata.
+  - Displayed extracted data in a clean, readable format alongside the image.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 3. Code Structure
+- **index.html**: Main file for structuring the UI and user interactions.
+- **style.css**: Stylesheet for visual design and responsive layout.
+- **script.js**: Contains JavaScript logic for image manipulation and metadata extraction.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Assumptions
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **File Support**:
+   - The application assumes input files will be in PNG or DICOM format.
+   - Error handling for unsupported formats is minimal.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **Metadata Fields**:
+   - Only commonly available metadata fields in DICOM files are extracted and displayed.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. **Image Manipulation Scope**:
+   - Focused on basic zoom and crop functionalities. Advanced features like rotation or filtering are not included.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## Challenges
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **DICOM Metadata Extraction**:
+   - Handling variations in metadata structures across different DICOM files.
+   - Ensuring parsing efficiency for large DICOM files.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **User-Friendly Interactions**:
+   - Implementing smooth zoom and crop functionality for desktop and mobile devices.
+   - Maintaining performance with high-resolution images.
 
-### Code Splitting
+3. **UI Responsiveness**:
+   - Achieving consistent user experience across different screen sizes and resolutions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## Methodology
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 1. Research and Planning
+- Identified suitable libraries such as `dicom-parser` for DICOM file parsing and KonvaJS for image manipulation.
+- Mapped user workflows to match project requirements.
 
-### Making a Progressive Web App
+### 2. Development
+- **Step 1**: Built a functional UI to upload and display images.
+- **Step 2**: Integrated JavaScript logic for zoom and crop functionality.
+- **Step 3**: Added DICOM metadata extraction and display features.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 3. Testing
+- Tested with multiple PNG and DICOM files to ensure robustness.
+- Conducted usability tests to refine the interface and improve responsiveness.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## How to Run the Project
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Clone the repository:
+   ```bash
+   git clone <repository_url>
