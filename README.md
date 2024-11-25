@@ -97,4 +97,4 @@ This project implements a SaaS application designed to manipulate medical images
 
 1. Clone the repository:
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/chandusreeram-9399/Origin-Medical-Labs.git
